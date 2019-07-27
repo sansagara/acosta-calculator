@@ -16,6 +16,11 @@
   </div>
 
   <div class="form-label-group">
+    <input type="number" id="impuesto" name="impuesto" [(ngModel)]="invoice.impuesto" (ngModelChange)="impuestoUpdated()" class="form-control" placeholder="% Impuesto" >
+    <label for="impuesto">% Impuesto</label>
+  </div>
+
+  <div class="form-label-group">
     <input type="number" id="impuestoVenta" name="impuestoVenta" [(ngModel)]="invoice.impuestoVenta" class="form-control"placeholder="Impuesto de Venta" readonly>
     <label for="impuestoVenta">Impuesto de Venta</label>
   </div>

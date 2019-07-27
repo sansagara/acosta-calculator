@@ -7,23 +7,25 @@ import { InvoiceModel } from './invoice-model';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  invoice = new InvoiceModel(0,0,0,0,0,0, 0)
+  invoice = new InvoiceModel(0,0,0.0635,0,0,0,0, 0)
 
   precioUpdated() {
     this.invoice.costoManejo = this.invoice.precioVenta * 0.05;
-    this.invoice.impuestoVenta = ((this.invoice.costoManejo + this.invoice.precioVenta) * 0.0635)
-    this.invoice.valorCompra = this.invoice.precioVenta + this.invoice.costoManejo + this.invoice.impuestoVenta;
-    this.invoice.balancePagar = this.invoice.valorCompra - (this.invoice.depositoEntregado + this.invoice.depositoAdicional);
+    this.manejoUpdated();
   }
 
   manejoUpdated() {
-    this.invoice.impuestoVenta = (this.invoice.costoManejo + this.invoice.precioVenta) * 0.0635;
+    this.invoice.impuestoVenta = (this.invoice.costoManejo + this.invoice.precioVenta) * this.invoice.impuesto;
     this.invoice.valorCompra = this.invoice.precioVenta + this.invoice.costoManejo + this.invoice.impuestoVenta;
-    this.invoice.balancePagar = this.invoice.valorCompra - (this.invoice.depositoEntregado + this.invoice.depositoAdicional);
+    this.depositoUpdated();
   }
 
   depositoUpdated() {
     this.invoice.balancePagar = this.invoice.valorCompra - (this.invoice.depositoEntregado + this.invoice.depositoAdicional);
+  }
+
+  impuestoUpdated() {
+    this.manejoUpdated();
   }
 
 }
