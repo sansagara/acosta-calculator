@@ -26,12 +26,12 @@
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="depositoEntregado" name="depositoEntregado" [(ngModel)]="invoice.depositoEntregado" (ngModelChange)="updatedValue()" class="form-control"  placeholder="Deposito entregado hoy">
+    <input type="number" id="depositoEntregado" name="depositoEntregado" [(ngModel)]="invoice.depositoEntregado" (ngModelChange)="depositoUpdated()" class="form-control"  placeholder="Deposito entregado hoy">
     <label for="depositoEntregado">Deposito entregado hoy</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="depositoAdicional" name="depositoAdicional" [(ngModel)]="invoice.depositoAdicional" (ngModelChange)="updatedValue()" class="form-control" placeholder="Deposito adicional">
+    <input type="number" id="depositoAdicional" name="depositoAdicional" [(ngModel)]="invoice.depositoAdicional" (ngModelChange)="depositoUpdated()" class="form-control" placeholder="Deposito adicional">
     <label for="depositoAdicional">Deposito adicional</label>
   </div>
 

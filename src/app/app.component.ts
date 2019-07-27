@@ -7,7 +7,6 @@ import { InvoiceModel } from './invoice-model';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'acosta-calculator';
   invoice = new InvoiceModel(0,0,0,0,0,0, 0)
 
   precioUpdated() {
@@ -23,5 +22,8 @@ export class AppComponent {
     this.invoice.balancePagar = this.invoice.valorCompra - (this.invoice.depositoEntregado + this.invoice.depositoAdicional);
   }
 
+  depositoUpdated() {
+    this.invoice.balancePagar = this.invoice.valorCompra - (this.invoice.depositoEntregado + this.invoice.depositoAdicional);
+  }
 
 }
