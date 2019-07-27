@@ -1,21 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<form class="form-signin">
+  <div class="text-center mb-4">
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Calculadora Costa Sons </h1>
+    <p>Calcula los detalles de tu <code>factura</code>.</p>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="precioVenta" name="precioVenta" [(ngModel)]="invoice.precioVenta" (ngModelChange)="precioUpdated()" class="form-control" placeholder="Precio de Venta" autofocus>
+    <label for="precioVenta">Precio de Venta</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="costoManejo" name="costoManejo" [(ngModel)]="invoice.costoManejo" (ngModelChange)="manejoUpdated()" class="form-control" placeholder="Costo de Manejo y Envio" >
+    <label for="costoManejo">Costo de Manejo y Envio</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="impuestoVenta" name="impuestoVenta" [(ngModel)]="invoice.impuestoVenta" class="form-control"placeholder="Impuesto de Venta" readonly>
+    <label for="impuestoVenta">Impuesto de Venta</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="valorCompra" name="valorCompra" [(ngModel)]="invoice.valorCompra" class="form-control"  placeholder="Valor total de la Compra" readonly>
+    <label for="valorCompra">Valor total de la Compra</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="depositoEntregado" name="depositoEntregado" [(ngModel)]="invoice.depositoEntregado" (ngModelChange)="updatedValue()" class="form-control"  placeholder="Deposito entregado hoy">
+    <label for="depositoEntregado">Deposito entregado hoy</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="depositoAdicional" name="depositoAdicional" [(ngModel)]="invoice.depositoAdicional" (ngModelChange)="updatedValue()" class="form-control" placeholder="Deposito adicional">
+    <label for="depositoAdicional">Deposito adicional</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="number" id="balancePagar" name="balancePagar" [(ngModel)]="invoice.balancePagar" class="form-control" placeholder="Balance a pagar" readonly>
+    <label for="balancePagar">Balance a pagar</label>
+  </div>
+
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2019</p>
+</form>
 
 <router-outlet></router-outlet>
