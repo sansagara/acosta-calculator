@@ -1,12 +1,12 @@
 <form class="form-signin">
   <div class="text-center mb-4">
-    <img class="mb-4" src="assets/icons/icon-72x72.png" alt="" width="72" height="72">
+    <img class="mb-4" src="assets/icons/icon-72x72.png" alt="Logo Acosta Sons" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Calculadora Acosta Sons </h1>
     <p>Calcula los detalles de tu <code>factura</code>.</p>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="precioVenta" name="precioVenta" [(ngModel)]="invoice.precioVenta" (ngModelChange)="precioUpdated()" class="form-control" placeholder="Precio de Venta" autofocus>
+    <input type="number" id="precioVenta" name="precioVenta" (focus)="selectText($event)" [(ngModel)]="invoice.precioVenta" (ngModelChange)="precioUpdated()" class="form-control" placeholder="Precio de Venta" autofocus>
     <label for="precioVenta">Precio de Venta</label>
   </div>
 
