@@ -6,46 +6,77 @@
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="precioVenta" name="precioVenta" (focus)="selectText($event)" [(ngModel)]="invoice.precioVenta" (ngModelChange)="precioUpdated()" class="form-control" placeholder="Precio de Venta" autofocus>
+    <input type="number" id="precioVenta" name="precioVenta" (focus)="selectText($event)"
+           [(ngModel)]="invoice.precioVenta" (ngModelChange)="precioUpdated()" class="form-control"
+           placeholder="Precio de Venta" autofocus>
     <label for="precioVenta">Precio de Venta</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="costoManejo" name="costoManejo" [(ngModel)]="invoice.costoManejo" (ngModelChange)="manejoUpdated()" class="form-control" placeholder="Costo de Manejo y Envio" >
+    <input type="number" id="costoManejo" name="costoManejo" [(ngModel)]="invoice.costoManejo"
+           (ngModelChange)="manejoUpdated()" class="form-control" placeholder="Costo de Manejo y Envio">
     <label for="costoManejo">Costo de Manejo y Envio</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="impuesto" name="impuesto" [(ngModel)]="invoice.impuesto" (ngModelChange)="impuestoUpdated()" class="form-control" placeholder="% Impuesto" >
+    <input type="number" id="impuesto" name="impuesto" [(ngModel)]="invoice.impuesto"
+           (ngModelChange)="impuestoUpdated()" class="form-control" placeholder="% Impuesto">
     <label for="impuesto">% Impuesto</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="impuestoVenta" name="impuestoVenta" [(ngModel)]="invoice.impuestoVenta" class="form-control"placeholder="Impuesto de Venta" readonly>
+    <input type="number" id="impuestoVenta" name="impuestoVenta" [(ngModel)]="invoice.impuestoVenta"
+           class="form-control" placeholder="Impuesto de Venta" readonly>
     <label for="impuestoVenta">Impuesto de Venta</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="valorCompra" name="valorCompra" [(ngModel)]="invoice.valorCompra" class="form-control"  placeholder="Valor total de la Compra" readonly>
+    <input type="number" id="valorCompra" name="valorCompra" [(ngModel)]="invoice.valorCompra" class="form-control"
+           placeholder="Valor total de la Compra" readonly>
     <label for="valorCompra">Valor total de la Compra</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="depositoEntregado" name="depositoEntregado" (focus)="selectText($event)" [(ngModel)]="invoice.depositoEntregado" (ngModelChange)="depositoUpdated()" class="form-control"  placeholder="Deposito entregado hoy">
+    <input type="number" id="depositoEntregado" name="depositoEntregado" (focus)="selectText($event)"
+           [(ngModel)]="invoice.depositoEntregado" (ngModelChange)="depositoUpdated()" class="form-control"
+           placeholder="Deposito entregado hoy">
     <label for="depositoEntregado">Deposito entregado hoy</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="depositoAdicional" name="depositoAdicional" (focus)="selectText($event)" [(ngModel)]="invoice.depositoAdicional" (ngModelChange)="depositoUpdated()" class="form-control" placeholder="Deposito adicional">
+    <input type="number" id="depositoAdicional" name="depositoAdicional" (focus)="selectText($event)"
+           [(ngModel)]="invoice.depositoAdicional" (ngModelChange)="depositoUpdated()" class="form-control"
+           placeholder="Deposito adicional">
     <label for="depositoAdicional">Deposito adicional</label>
   </div>
 
   <div class="form-label-group">
-    <input type="number" id="balancePagar" name="balancePagar" [(ngModel)]="invoice.balancePagar" class="form-control" placeholder="Balance a pagar" readonly>
+    <input type="number" id="balancePagar" name="balancePagar" [(ngModel)]="invoice.balancePagar" class="form-control"
+           placeholder="Balance a pagar" readonly>
     <label for="balancePagar">Balance a pagar</label>
   </div>
 
-  <p class="mt-5 mb-3 text-muted text-center">&copy; 2019</p>
+  <div class="mb-4" [hidden]="pagoMinimo35 == 0">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="list-35-list" data-toggle="list"
+          href="#list-35" role="tab" aria-controls="35">35 meses
+        <span class="badge badge-secondary">{{ pagoMinimo35 | number }}</span></li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="list" href="#list-26"
+          role="tab" aria-controls="26">26 meses
+        <span class="badge badge-secondary">{{ pagoMinimo26 | number }}</span></li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="list-20-list" data-toggle="list"
+          href="#list-20" role="tab" aria-controls="20">20 meses
+        <span class="badge badge-secondary">{{ pagoMinimo20 | number }}</span></li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="list-17-list" data-toggle="list"
+          href="#list-17" role="tab" aria-controls="17">17 meses
+        <span class="badge badge-secondary">{{ pagoMinimo17 | number }}</span></li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="list-11-list" data-toggle="list"
+          href="#list-11" role="tab" aria-controls="11">11 meses
+        <span class="badge badge-secondary">{{ pagoMinimo11 | number }}</span></li>
+    </ul>
+  </div>
+
 </form>
 
+<p class="mt-5 mb-3 text-muted text-center">&copy; 2019</p>
 <router-outlet></router-outlet>
